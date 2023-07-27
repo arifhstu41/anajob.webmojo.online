@@ -5,3 +5,5 @@ vendor
 .env
 .htaccess
 .styleci.yml
+storage
+config/app.php
