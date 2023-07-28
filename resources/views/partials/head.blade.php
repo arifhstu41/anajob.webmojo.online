@@ -21,9 +21,19 @@ if (!empty($setting['color'])) {
 ?>
 <head>
 
-  
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-13J1NE912P"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-13J1NE912P');
+    </script>
+
     <!-- Primary Meta Tags -->
-    
+
     <meta name="title" content="{{$meta_setting['meta_keywords']}}">
     <meta name="description" content="{{$meta_setting['meta_description']}}">
 
@@ -43,18 +53,18 @@ if (!empty($setting['color'])) {
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Favicon icon -->
     <link rel="icon" href="{{ $logos . (isset($company_favicon['company-favicon']) && !empty($company_favicon['company-favicon']) ? $company_favicon['company-favicon'] : 'favicon.png') }}"type="image/x-icon" />
-      
+
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/main.css') }}">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.css" integrity="sha512-gp+RQIipEa1X7Sq1vYXnuOW96C4704yI1n0YB9T/KqdvqaEgL6nAuTSrKufUX3VBONq/TPuKiXGLVgBKicZ0KA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <!-- font css -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/tabler-icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}">
     <script src="{{asset('js/jquery-1.11.0.min.js')}}"></script>
-    
+
     @stack('pre-purpose-css-page')
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/style.css') }}">
@@ -63,7 +73,7 @@ if (!empty($setting['color'])) {
         <link rel="stylesheet" href="{{ asset('css/bootstrap-rtl.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style-rtl.css') }}">
     @endif
-{{--     
+{{--
     @if (!empty($settings['cust_darklayout']) && $settings['cust_darklayout'] == 'on')
         <link rel="stylesheet" href="{{ asset('assets/css/style-dark.css') }}">
     @else
@@ -78,7 +88,7 @@ if (!empty($setting['color'])) {
 
     <!--bootstrap switch-->
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-switch-button.min.css') }}">
-    
+
     <link rel="stylesheet" href="{{ asset('public/custom/css/custom.css') }}">
      <style type="text/css">
     .big-logo{
